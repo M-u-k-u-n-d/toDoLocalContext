@@ -8,7 +8,8 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo)=>{
-    setTodos((prev) => [{id:Date.now(),...todo},prev]);
+    console.log("todo ", todo);
+    setTodos((prev) => [{id:Date.now(),...todo},...prev]);
   }
 
   const updateTodo = (id,todo)=>{
@@ -32,7 +33,6 @@ function App() {
     if(todos && todos.length > 0){
       setTodos(todos);
     }
-
   },[]);
 
   useEffect(()=>{
